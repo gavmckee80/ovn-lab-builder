@@ -1,0 +1,35 @@
+{
+    "vpc": {
+      "name": "vlab",
+      "mac_prefix": "e1:cc:ff",
+      "id": 1
+    },
+    "switches": [
+      {
+        "name": "ls1",
+        "id": 1,
+        "type": "normal",
+        "subnet": "192.168.10.0/24",
+        "dhcp_enable": true,
+        "routed": true,
+        "ports": [
+          { "name": "lsp1", "addressing": "dynamic" },
+          { "name": "lsp2", "addressing": "static", "ip": "192.168.10.20" },
+          { "name": "lsp3", "addressing": "dynamic" },
+          { "name": "lsp4", "addressing": "unknown" }
+        ]
+      },
+      {
+        "name": "ls2",
+        "id": 2,
+        "type": "p2p",
+        "subnet": "192.168.1.0/31",
+        "dhcp_enable": false,
+        "routed": true,
+        "ports": [
+          { "name": "lsp1", "addressing": "static", "ip": "192.168.1.0" },
+          { "name": "lsp2", "addressing": "static", "ip": "192.168.1.1" }
+        ]
+      }
+    ]
+  }

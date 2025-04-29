@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ovn-lab-builder"
+version = "0.1.0"
+description = "Tool to build and destroy OVN virtual lab topologies"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+dependencies = [
+    "click>=8.0.0",
+    "ovsdbapp>=2.0.0",
+    "pydantic>=1.8.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/ovn-lab-builder"
+Issues = "https://github.com/yourusername/ovn-lab-builder/issues"
+
+[project.scripts]
+ovn-lab-builder = "ovn_lab_builder.cli.main:cli"
+
+[tool.setuptools]
+packages = ["ovn_lab_builder", "ovn_lab_builder.cli"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
